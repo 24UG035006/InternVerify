@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InternVerify History</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#4facfe,#00f2fe);
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            width:80%;
+            margin:40px auto;
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h1{
+            color:#007bff;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:20px;
+        }
+
+        th{
+            background:#007bff;
+            color:white;
+            padding:12px;
+        }
+
+        td{
+            padding:10px;
+            border:1px solid #ddd;
+        }
+
+        tr:nth-child(even){
+            background:#f2f2f2;
+        }
+
+        .btn{
+            background:#dc3545;
+            color:white;
+            padding:12px 20px;
+            border:none;
+            border-radius:8px;
+            text-decoration:none;
+            margin-right:10px;
+        }
+
+        .home{
+            background:#28a745;
+            color:white;
+            padding:12px 20px;
+            border-radius:8px;
+            text-decoration:none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📋 InternVerify History</h1>
+
+    <form method="GET" action="/history">
+    <input type="text" name="search" placeholder="Search Company">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+    <table>
+
+        <tr>
+            <th>Company</th>
+            <th>Risk Score</th>
+            <th>Trust Score</th>
+            <th>Status</th>
+        </tr>
+
+        {% for row in records %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <a class="btn" href="/clear_history">🗑 Clear History</a>
+
+    <br><br>
+
+<a class="home" href="/download_excel">
+    📥 Download Excel Report
+</a>
+
+    <a class="home" href="/">🏠 Back to Home</a>
+
+</div>
+
+</body>
+</html>

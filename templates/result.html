@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#4facfe,#00f2fe);
+        }
+
+        .container{
+            width:500px;
+            margin:80px auto;
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Analysis Result</h1>
+
+    <h2>Company: {{ company }}</h2>
+
+    {% if status == "Safe" %}
+    <h2 style="color:green;">🟢 Status: {{ status }}</h2>
+
+    {% elif status == "Moderate Risk" %}
+    <h2 style="color:orange;">🟠 Status: {{ status }}</h2>
+
+    {% else %}
+    <h2 style="color:red;">🔴 Status: {{ status }}</h2>
+    {% endif %}
+
+    <h2>Risk Score: {{ risk }}</h2>
+
+    <h2>Trust Score: {{ trust_score }}/100</h2>
+
+    <h2>Scam Probability: {{ scam_probability }}%</h2>
+
+    <h2>Recommendation: {{ recommendation }}</h2>
+    <br>
+
+<h3>⚠️ Safety Tips</h3>
+
+<ul style="text-align:left;">
+    <li>Never pay registration fees without verification.</li>
+    <li>Check the official company website.</li>
+    <li>Verify the company on LinkedIn.</li>
+    <li>Use only official company email domains.</li>
+</ul>
+
+    <br>
+
+    <a href="/">Check Another Internship</a>
+
+    <br><br>
+
+<a href="/">🏠 Home</a>
+
+<br><br>
+
+<a href="/history">📋 View History</a>
+
+<br><br>
+
+<a href="/dashboard">📊 View Dashboard</a>
+
+<br><br>
+
+<a href="/download_report">
+    📄 Download PDF Report
+</a>
+
+</div>
+
+</body>
+</html>

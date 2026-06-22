@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InternVerify Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#4facfe,#00f2fe);
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            width:80%;
+            margin:40px auto;
+            text-align:center;
+        }
+
+        h1{
+            color:white;
+            margin-bottom:30px;
+        }
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            width:220px;
+            padding:25px;
+            border-radius:15px;
+            color:white;
+            box-shadow:0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .total{
+            background:#007bff;
+        }
+
+        .high{
+            background:#dc3545;
+        }
+
+        .moderate{
+            background:#fd7e14;
+        }
+
+        .safe{
+            background:#28a745;
+        }
+
+        .card h2{
+            margin:0;
+            font-size:32px;
+        }
+
+        .card p{
+            font-size:18px;
+        }
+
+        .home{
+            display:inline-block;
+            margin-top:30px;
+            padding:12px 20px;
+            background:white;
+            color:#007bff;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 InternVerify Dashboard</h1>
+
+    <div class="cards">
+
+        <div class="card total">
+            <p>Total Checks</p>
+            <h2>{{ total }}</h2>
+        </div>
+
+        <div class="card high">
+            <p>High Risk</p>
+            <h2>{{ high_risk }}</h2>
+        </div>
+
+        <div class="card moderate">
+            <p>Moderate Risk</p>
+            <h2>{{ moderate_risk }}</h2>
+        </div>
+
+        <div class="card safe">
+            <p>Safe</p>
+            <h2>{{ safe }}</h2>
+        </div>
+
+    </div>
+
+    <br><br>
+
+      <img src="{{ url_for('static', filename='chart.png') }}" width="400">
+
+    <br><br>
+
+    <a class="home" href="/">🏠 Back to Home</a>
+
+</div>
+
+</body>
+</html>

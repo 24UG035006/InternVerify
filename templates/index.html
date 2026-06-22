@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InternVerify</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right,#4facfe,#00f2fe);
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            width:550px;
+            margin:40px auto;
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0 0 20px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#007bff;
+        }
+
+        h3{
+            text-align:center;
+            color:#555;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input,
+        select,
+        textarea{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:12px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .dark{
+        background:#121212 !important;
+        color:white;
+        }
+
+        .dark .container{
+        background:#1e1e1e;
+        color:white;
+        }
+
+       .dark-btn{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background: #333;
+    color: white;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+    </style>
+
+</head>
+<body id="page"></body>
+
+<div class="container">
+
+    <button class="dark-btn" onclick="toggleMode()">🌙</button>
+
+    <h1>InternVerify</h1>
+    <h3>Internship Verification & Risk Assessment Platform</h3>
+
+    <form action="/check" method="POST">
+
+        <label>Company Name</label>
+        <input type="text" name="company" required>
+
+        <label>Stipend</label>
+        <input type="number" name="stipend" required>
+
+        <label>Application Fee</label>
+        <input type="number" name="fee" required>
+
+        <label>Official Website Available?</label>
+        <select name="website">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Official Email Available?</label>
+        <select name="email">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Contact Email</label>
+        <input type="email" name="contact_email">
+
+        <label>Internship Description</label>
+        <textarea name="description" rows="5"></textarea>
+
+        <button type="submit">Check Internship</button>
+
+    </form>
+
+    <br>
+
+<a href="/dashboard">📊 View Dashboard</a>
+
+<br><br>
+
+<a href="/history">📋 View History</a>
+
+</div>
+
+<script>
+
+function toggleMode(){
+
+    let page = document.getElementById("page");
+
+    page.classList.toggle("dark");
+
+}
+
+</script>
+
+</body>
+</html>
